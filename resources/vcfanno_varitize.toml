@@ -1,0 +1,59 @@
+[[annotation]]
+file="/home/matt/bin/varitize/resources/omim.gene.mim.pheno.bed.gz"
+columns=[4]
+ops=["concat"]
+names=["OMIM"]
+
+[[annotation]]
+file="/home/matt/bin/varitize/resources/hpo.gene.phenotypes.grch38.bed.gz"
+columns=[4]
+ops=["concat"]
+names=["HPO"]
+
+[[annotation]]
+file="/home/matt/bin/varitize/resources/gene.functions.bed.gz"
+columns=[4]
+ops=["concat"]
+names=["GeneFunction"]
+
+[[annotation]]
+file="/home/matt/bin/varitize/resources/dbsnp_all.chr.vcf.gz"
+# ID and FILTER are special fields that pull the ID and FILTER columns from the VCF
+fields = ["ID"]
+ops=["self"]
+names=["dbSNP"]
+
+[[annotation]]
+file="/home/matt/bin/varitize/resources/revel.grch38.vcf.gz"
+# ID and FILTER are special fields that pull the ID and FILTER columns from the VCF
+fields = ["REVEL"]
+ops=["self"]
+names=["REVEL"]
+
+[[annotation]]
+file="/home/matt/bin/varitize/resources/AlphaMissense_hg38.vcf.gz"
+# ID and FILTER are special fields that pull the ID and FILTER columns from the VCF
+fields = ["AlphaMissense"]
+ops=["self"]
+names=["AlphaMissense"]
+
+[[annotation]]
+file="/home/matt/bin/varitize/resources/EVE.all.variants.chr.vcf.gz"
+# ID and FILTER are special fields that pull the ID and FILTER columns from the VCF
+fields = ["EVE"]
+ops=["self"]
+names=["EVE"]
+
+[[annotation]]
+file="/home/matt/bin/varitize/resources/mutscore-v1.0-hg38.vep.vcf.gz"
+# ID and FILTER are special fields that pull the ID and FILTER columns from the VCF
+fields = ["MutScore"]
+ops=["self"]
+names=["MutScore"]
+
+[[annotation]]
+file="/home/matt/bin/varitize/resources/clinvar.grch38.chr.vcf.gz"
+# ID and FILTER are special fields that pull the ID and FILTER columns from the VCF
+fields = ["CLNDN", "CLNSIG", "CLNSIGCONF"]
+ops=["self", "self", "self"]
+names=["ClinVar_Disease", "ClinVar_Significance", "ClinVar_Confidence"]
