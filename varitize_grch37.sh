@@ -13,3 +13,8 @@ bcftools csq -f $REF -g $GFF --phase a --ncsq 20 --threads 16 $VCF \
 
 # convert annotated vcf to tsv
 vcf2tsvpy --input_vcf $VCF_OUT --out_tsv $TSV_OUT
+
+# remove first line and remove | from INFO_BCSQ to allow for dataframe searching
+tail -n+2 $TSV_OUT | sed 's/|/ /g' > $TSV_OUT.ns.tsv
+mv $TSV_OUT.ns.tsv $TSV_OUT
+
